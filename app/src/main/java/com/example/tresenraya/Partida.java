@@ -45,7 +45,7 @@ public class Partida {
 
     public boolean comprueba_casilla(int casilla){
         boolean returnador = false;
-        if (arrayOcupaciones[casilla] == 0 ){
+        if (arrayOcupaciones[casilla] == 0){
             arrayOcupaciones[casilla] = interruptorJugadores;
             returnador = true;
         }

@@ -114,8 +114,8 @@ public class MainActivity extends AppCompatActivity {
                                 if (partida.getDificultad() != 0){
                                     if(partida.comprueba_casilla(a)){
                                         CasillasImagen[a].setImageResource(R.drawable.aspa);
-                                        partida.turno();
-                                        //InteligenciaArtificial();
+
+                                        InteligenciaArtificial();
                                     }
                                 }
                             }
@@ -127,13 +127,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void InteligenciaArtificial(){
 
+
         for (int i = 0; i<CasillasImagen.length; i++) {
-            if (partida.comprueba_casilla(partida.IA())) {
-                CasillasImagen[partida.IA()].setImageResource(R.drawable.circulo);
-                partida.turno();
+            int aleatoriedad = partida.IA();
+            if (partida.comprueba_casilla(aleatoriedad)) {
+                CasillasImagen[aleatoriedad].setImageResource(R.drawable.circulo);
                 break;
             }
         }
+
 
     }
 }

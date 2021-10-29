@@ -53,36 +53,37 @@ public class Partida {
         return returnador;
     }
 
-    public void turno(){
-//        int estadoPartida = 0;
-//        boolean empate = true;
-//        boolean ultimo_movimiento = true;
-//
-//        for(int i= 0;i<COMBINACIONES_GANADORAS.length;i++){
-//            for(int pos:COMBINACIONES_GANADORAS[i]){
-//
-//                if(arrayOcupaciones[pos] != interruptorJugadores){
-//                    ultimo_movimiento = false;
-//                }
-//
-//                if (arrayOcupaciones[pos] == 0){
-//                    empate = false;
-//                }
-//                    if(ultimo_movimiento) estadoPartida = interruptorJugadores;
-//                    ultimo_movimiento = true;
-//            }
-//
-//        }
-//
-//        if(empate){
-//            estadoPartida = 3;
-//        }
+    public int turno(){
+        int estadoPartida = 0;
+        boolean empate = true;
+        boolean ultimo_movimiento = true;
+
+        for(int i= 0;i<COMBINACIONES_GANADORAS.length;i++){
+            for(int pos:COMBINACIONES_GANADORAS[i]){
+
+                if(arrayOcupaciones[pos] != interruptorJugadores){
+                    ultimo_movimiento = false;
+                }
+
+                if (arrayOcupaciones[pos] == 0){
+                    empate = false;
+                }
+                    if(ultimo_movimiento) estadoPartida = interruptorJugadores;
+                    ultimo_movimiento = true;
+            }
+
+        }
+
+        if(empate){
+            estadoPartida = 3;
+        }
+
         interruptorJugadores++;
         if(interruptorJugadores > 2){
             interruptorJugadores = 1;
         }
 
-//        return estadoPartida;
+        return estadoPartida;
     }
 
 }

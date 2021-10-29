@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
         buttonOnePlayer = findViewById(R.id.btn_unJugador);
         buttonTwoPlayer = findViewById(R.id.btn_dosJugadores);
 
-
-
         for (int i = 0; i<CasillasImagen.length; i++ ){
             String casilla = "a"+(i+1);
             int getCasillaResource = getResources().getIdentifier(casilla,"id",getPackageName());
@@ -41,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
         }
         aJugar();
         toque();
-
-
     }
 
     private void aJugar(){
@@ -114,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                                 if (partida.getDificultad() != 0){
                                     if(partida.comprueba_casilla(a)){
                                         CasillasImagen[a].setImageResource(R.drawable.aspa);
-
+                                        partida.turno();
                                         InteligenciaArtificial();
                                     }
                                 }
@@ -126,16 +122,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void InteligenciaArtificial(){
-
-
         for (int i = 0; i<CasillasImagen.length; i++) {
             int aleatoriedad = partida.IA();
             if (partida.comprueba_casilla(aleatoriedad)) {
                 CasillasImagen[aleatoriedad].setImageResource(R.drawable.circulo);
+                partida.turno();
                 break;
             }
         }
-
-
     }
 }

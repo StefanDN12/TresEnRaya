@@ -68,14 +68,12 @@ public class Partida {
                 if (arrayOcupaciones[pos] == 0){
                     empate = false;
                 }
-                    if(ultimo_movimiento) estadoPartida = interruptorJugadores;
-                    ultimo_movimiento = true;
             }
-
+            if(ultimo_movimiento) return interruptorJugadores;
+            ultimo_movimiento = true;
         }
-
         if(empate){
-            estadoPartida = 3;
+            return 3;
         }
 
         interruptorJugadores++;

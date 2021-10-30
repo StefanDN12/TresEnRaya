@@ -84,4 +84,23 @@ public class Partida {
         return estadoPartida;
     }
 
+    public int dosEnRaya(int jugador_casilla){
+
+        int casilla = -1;
+        int cuantaslleva = 0;
+
+        for(int i= 0;i<COMBINACIONES_GANADORAS.length;i++){
+            for(int pos:COMBINACIONES_GANADORAS[i]){
+                    if ()
+
+            }
+        }
+
+
+
+
+
+        return casilla;
+    }
+
 }

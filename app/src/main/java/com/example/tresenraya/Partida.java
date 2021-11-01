@@ -34,6 +34,26 @@ public class Partida {
     }
 
     public int IA(){
+
+        int casilla = -1;
+
+        casilla = dosEnRaya(2);
+
+        if (casilla == -1) return casilla;
+
+        if(dificultad > 1){
+            casilla = dosEnRaya(1);
+
+            if(casilla != -1) return casilla;
+        }
+
+        if(dificultad == 3){
+            if(arrayOcupaciones[0] == 0) return 0;
+            if(arrayOcupaciones[2] == 0) return 3;
+            if(arrayOcupaciones[4] == 0) return 4;
+            if(arrayOcupaciones[6] == 0) return 6;
+        }
+
         int numAleatorio = new Random().nextInt(9);
 
         return numAleatorio;
@@ -63,6 +83,7 @@ public class Partida {
 
                 if(arrayOcupaciones[pos] != interruptorJugadores){
                     ultimo_movimiento = false;
+
                 }
 
                 if (arrayOcupaciones[pos] == 0){
@@ -91,14 +112,14 @@ public class Partida {
 
         for(int i= 0;i<COMBINACIONES_GANADORAS.length;i++){
             for(int pos:COMBINACIONES_GANADORAS[i]){
-                    if ()
-
+                if(arrayOcupaciones[pos] == jugador_casilla) cuantaslleva += 1;
+                if(arrayOcupaciones[0] == 0) casilla = pos;
             }
+            if(cuantaslleva == 2 && casilla != -1) return casilla;
+
+            casilla =-1;
+            cuantaslleva = 0;
         }
-
-
-
-
 
         return casilla;
     }

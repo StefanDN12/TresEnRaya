@@ -43,7 +43,6 @@ public class Partida {
 
         if(dificultad > 1){
             casilla = dosEnRaya(1);
-
             if(casilla != -1) return casilla;
         }
 

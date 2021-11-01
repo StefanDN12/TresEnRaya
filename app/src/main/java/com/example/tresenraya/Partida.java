@@ -35,11 +35,11 @@ public class Partida {
 
     public int IA(){
 
-        int casilla = -1;
+        int casilla;
 
         casilla = dosEnRaya(2);
 
-        if (casilla == -1) return casilla;
+        if (casilla != -1) return casilla;
 
         if(dificultad > 1){
             casilla = dosEnRaya(1);
@@ -49,14 +49,14 @@ public class Partida {
 
         if(dificultad == 3){
             if(arrayOcupaciones[0] == 0) return 0;
-            if(arrayOcupaciones[2] == 0) return 3;
+            if(arrayOcupaciones[2] == 0) return 2;
             if(arrayOcupaciones[4] == 0) return 4;
             if(arrayOcupaciones[6] == 0) return 6;
         }
 
-        int numAleatorio = new Random().nextInt(9);
+        casilla = new Random().nextInt(9);
 
-        return numAleatorio;
+        return casilla;
     }
 
     public int getInterruptorJugadores() {
@@ -121,7 +121,7 @@ public class Partida {
             cuantaslleva = 0;
         }
 
-        return casilla;
+        return -1;
     }
 
 }
